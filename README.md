@@ -59,15 +59,15 @@ To resolve the issue:
 Prerequisites:
 
 1. Configure AD
-2. Set Default AD (âConfigure AD plug-in optionsâ â workflow name is a bit misleading) â needed for the way how I query AD.
+2. Set Default AD (“Configure AD plug-in options” – workflow name is a bit misleading) – needed for the way how I query AD.
 
 Code for AD query:
 ```javascript
-AllUserData = ActiveDirectory.searchExactMatch(âUserâ,machine.get(âownerâ));
-username = AllUserData[0].getAttribute(âdisplayNameâ);
-System.log(âUsername: â + username);
-login = AllUserData[0].getAttribute(âsAMAccountNameâ);
-System.log(âLogin: â + login);
-email = AllUserData[0].getAttribute(âmailâ);
-System.log(âEmail: â + email);
+AllUserData = ActiveDirectory.searchExactMatch(“User”,machine.get(“owner”));
+username = AllUserData[0].getAttribute(“displayName”);
+System.log(“Username: ” + username);
+login = AllUserData[0].getAttribute(“sAMAccountName”);
+System.log(“Login: ” + login);
+email = AllUserData[0].getAttribute(“mail”);
+System.log(“Email: ” + email);
 ```
